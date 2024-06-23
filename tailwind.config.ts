@@ -13,6 +13,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        sora: ["Sora", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+      colors: {
+        blue: {
+          primary: "#00AEFF",
+        },
+        gray: {
+          light: "#AEAEAE",
+          dark: "#555555",
+          darker: "#1F1F1F",
+        },
+      },
     },
   },
   plugins: [],
