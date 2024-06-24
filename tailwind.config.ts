@@ -27,6 +27,9 @@ const config: Config = {
           darker: "#1F1F1F",
         },
       },
+      dropShadow: {
+        lightBlue: "0 0 150px rgba(0, 174, 255, 0.25)",
+      },
     },
   },
   plugins: [],
