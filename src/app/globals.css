@@ -10,5 +10,6 @@
     font-family: "inter";
     background-color: black;
     color: white;
+    scroll-behavior: smooth;
   }
 }

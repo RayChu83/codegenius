@@ -1,16 +1,5 @@
 "use client";
 import { BsThreeDots } from "react-icons/bs";
-import { PiRectangleDashedBold } from "react-icons/pi";
-import { GoDash } from "react-icons/go";
-import { IoCloseSharp, IoDocumentsOutline } from "react-icons/io5";
-import {
-  VscDebugRerun,
-  VscExtensions,
-  VscSearch,
-  VscSettingsGear,
-  VscSourceControl,
-} from "react-icons/vsc";
-import { CgProfile } from "react-icons/cg";
 
 import Container from "@/app/_components/Container";
 import Image from "next/image";
@@ -18,25 +7,23 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import {
+  codeEditorNavigationElements,
+  codeEditorRightNavigationElements,
+  codeEditorSidebarBottomElements,
+  codeEditorSidebarElements,
+} from "@/app/constants";
 
 const tl = gsap.timeline();
 
 export default function Hero() {
   useGSAP(() => {
-    gsap.fromTo(
-      ".left-hero",
-      { x: -200, opacity: 0 },
-      { x: 0, opacity: 1, delay: 0.75, duration: 0.25 }
-    );
-    gsap.fromTo(
-      ".code-editor",
-      { y: 200, opacity: 0 },
-      { y: 0, opacity: 1, delay: 0.75, duration: 0.25 }
-    );
+    gsap.fromTo(".left-hero", { x: -200, opacity: 0 }, { x: 0, opacity: 1 });
+    gsap.fromTo(".code-editor", { y: 200, opacity: 0 }, { y: 0, opacity: 1 });
     tl.fromTo(
       ".top-nav-option",
       { opacity: 0, x: -15 },
-      { opacity: 1, x: 0, stagger: 0.025, delay: 1 }
+      { opacity: 1, x: 0, stagger: 0.025, delay: 0.5 }
     )
       .fromTo(
         ".sidebar-icon",
@@ -70,7 +57,7 @@ export default function Hero() {
           </h1>
           <Link
             href="#features"
-            className="bg-blue-primary text-white py-2 px-4 rounded-md text-base font-inter font-medium w-fit"
+            className="bg-blue-primary hover:bg-blue-primary/90 transition-colors text-white py-2 px-4 rounded-md text-base font-inter font-medium w-fit"
           >
             Check it out
           </Link>
@@ -79,44 +66,54 @@ export default function Hero() {
           <section className="bg-[#1F1F1F] border border-[#555555] rounded-lg sm:h-full h-[250px] sm:w-[70%] w-full relative code-editor z-[2]">
             <nav className="absolute top-2 flex justify-between w-full px-2 z-[2]">
               <ul className="text-[10px] text-gray-light flex items-center gap-2">
-                <li className="top-nav-option cursor-pointer">File</li>
-                <li className="top-nav-option cursor-pointer">Edit</li>
-                <li className="top-nav-option cursor-pointer">Selection</li>
-                <li className="top-nav-option cursor-pointer">View</li>
-                <span className="items-center gap-2 sm:flex hidden">
-                  <li className="top-nav-option cursor-pointer">Go</li>
-                  <li className="top-nav-option cursor-pointer">Debug</li>
-                  <li className="top-nav-option cursor-pointer">Terminal</li>
-                  <li className="top-nav-option cursor-pointer">Help</li>
-                </span>
-                <li className="sm:hidden visible top-nav-option cursor-pointer">
+                {codeEditorNavigationElements.map((navElement, index) => (
+                  <li
+                    key={index}
+                    className={`top-nav-option cursor-pointer hover:text-white transition-colors ${
+                      navElement.hiddenOnBigScreens && "sm:block hidden"
+                    }`}
+                  >
+                    {navElement.label}
+                  </li>
+                ))}
+                <li className="sm:hidden visible top-nav-option cursor-pointer hover:text-white transition-colors">
                   <BsThreeDots />
                 </li>
               </ul>
               <ul className="text-[10px] text-gray-light flex items-center gap-2">
-                <GoDash className="top-nav-option cursor-pointer" />
-                <PiRectangleDashedBold className="top-nav-option cursor-pointer" />
-                <IoCloseSharp className="top-nav-option cursor-pointer" />
+                {codeEditorRightNavigationElements.map((naveElement, index) => (
+                  <naveElement.icon
+                    className={`top-nav-option cursor-pointer hover:text-white transition-colors ${naveElement?.className}`}
+                    key={index}
+                  />
+                ))}
               </ul>
             </nav>
             <aside className="absolute top-0 pt-8 pb-2 left-2 flex flex-col justify-between h-full">
               <div className="text-base text-gray-light space-y-2">
-                <IoDocumentsOutline className="sidebar-icon cursor-pointer" />
-                <VscSearch className="sidebar-icon cursor-pointer" />
-                <VscSourceControl className="sidebar-icon cursor-pointer" />
-                <VscDebugRerun className="sidebar-icon cursor-pointer" />
-                <VscExtensions className="sidebar-icon cursor-pointer" />
+                {codeEditorSidebarElements.map((sidebarElement, index) => (
+                  <sidebarElement.icon
+                    className="sidebar-icon cursor-pointer hover:text-white transition-colors"
+                    key={index}
+                  />
+                ))}
               </div>
               <div className="text-base text-gray-light space-y-2">
-                <CgProfile className="sidebar-icon cursor-pointer" />
-                <VscSettingsGear className="sidebar-icon cursor-pointer" />
+                {codeEditorSidebarBottomElements.map(
+                  (sidebarElement, index) => (
+                    <sidebarElement.icon
+                      className="sidebar-icon cursor-pointer hover:text-white transition-colors"
+                      key={index}
+                    />
+                  )
+                )}
               </div>
             </aside>
             <Image
               src="/html.png"
               alt="html"
-              className="absolute top-8 left-8 pointer-events-none code-editor-html"
-              height={149}
+              className="absolute top-8 left-5 pointer-events-none code-editor-html"
+              height={150}
               width={200}
             />
           </section>
@@ -139,9 +136,11 @@ export default function Hero() {
                 />
               ))}
             </ul>
-            <div className="absolute bottom-2 w-[85%] left-1/2 -translate-x-1/2 rounded-xl text-[10px] text-gray-light bg-black/40 p-2 flex items-center gap-2 ai-dashboard-suggesting">
-              <AiOutlineLoading3Quarters className="animate-spin text-blue-primary" />
-              AI is suggesting...
+            <div className="px-3 absolute bottom-2 w-full ">
+              <div className="w-full rounded-xl text-[10px] text-gray-light bg-black/40 p-2 flex items-center gap-2 ai-dashboard-suggesting">
+                <AiOutlineLoading3Quarters className="animate-spin text-blue-primary" />
+                AI is suggesting...
+              </div>
             </div>
           </section>
         </div>
