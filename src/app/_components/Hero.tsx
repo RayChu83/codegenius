@@ -57,7 +57,7 @@ export default function Hero() {
       );
   }, []);
   return (
-    <Container className="relative bg-black mt-[120px]" id="#hero">
+    <Container className="relative bg-black mt-24" id="#hero">
       <section className="grid lg:grid-cols-10 items-center max-w-[1440px] m-auto gap-5">
         <div className="flex flex-col gap-2 col-span-4 left-hero">
           <h1 className="font-sora text-white text-4xl font-bold">

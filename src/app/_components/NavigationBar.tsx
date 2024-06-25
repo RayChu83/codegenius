@@ -26,7 +26,7 @@ export default function NavigationBar() {
     setNavigationOpened(false);
   };
   return (
-    <header className="flex justify-between items-center m-auto p-5 xl:px-10 fixed top-0 w-full z-[70] bg-black border-b border-gray-dark">
+    <header className="flex justify-between items-center m-auto px-5 xl:px-10 py-7 fixed top-0 w-full z-[70] bg-black border-b border-gray-dark">
       <Link href="#hero">
         <Image
           src="/logo.png"
@@ -64,12 +64,12 @@ export default function NavigationBar() {
           navigationOpened ? "block" : "hidden"
         }`}
       >
-        <nav className="w-full h-full flex flex-col absolute top-[30%] text-center gap-12">
+        <nav className="w-full h-full flex flex-col absolute top-[27%] text-center gap-12">
           {navigationElements.map(({ href, label }, index) => (
             <Link
               href={href}
               key={index}
-              className="text-gray-light hover:text-white transition-colors uppercase font-semibold text-2xl"
+              className="text-gray-light hover:text-white transition-colors uppercase font-semibold text-xl w-fit mx-auto"
               onClick={handleLinkClicked}
             >
               {label}

@@ -61,7 +61,7 @@ export default function Benefits() {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="w-auto h-4/5 absolute bottom-0 right-0 xl:opacity-100 md:opacity-20 xs:opacity-20 transition-all duration-300 xl:drop-shadow-lightBlue overflow-hidden"
+                  className="w-auto h-4/5 absolute bottom-0 right-0 xl:opacity-100 md:opacity-20 xs:opacity-20 transition-all duration-300 xl:drop-shadow-lightBlue overflow-hidden object-cover"
                 />
               </div>
             )}
