@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CgMenuRight } from "react-icons/cg";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { useEffect, useState } from "react";
+import { IoClose } from "react-icons/io5";
 
 export default function NavigationBar() {
   const [navigationOpened, setNavigationOpened] = useState(false);
@@ -25,7 +26,7 @@ export default function NavigationBar() {
     setNavigationOpened(false);
   };
   return (
-    <header className="flex justify-between items-center m-auto p-5 xl:px-10 fixed top-0 w-full z-[70] backdrop-blur-md border-b border-gray-dark">
+    <header className="flex justify-between items-center m-auto p-5 xl:px-10 fixed top-0 w-full z-[70] bg-black border-b border-gray-dark">
       <Link href="#hero">
         <Image
           src="/logo.png"
@@ -47,12 +48,19 @@ export default function NavigationBar() {
           </Link>
         ))}
       </nav>
-      <CgMenuRight
-        className="md:hidden block text-xl text-gray-light hover:text-white transition-colors cursor-pointer"
-        onClick={handleNavToggle}
-      />
+      {navigationOpened ? (
+        <IoClose
+          className="md:hidden block text-xl text-gray-light hover:text-white transition-colors cursor-pointer"
+          onClick={handleNavToggle}
+        />
+      ) : (
+        <CgMenuRight
+          className="md:hidden block text-xl text-gray-light hover:text-white transition-colors cursor-pointer"
+          onClick={handleNavToggle}
+        />
+      )}
       <div
-        className={`absolute w-full h-[100vh] top-[98px] left-0 bg-black md:hidden ${
+        className={`absolute w-full h-[100vh] top-[97px] left-0 bg-black md:hidden ${
           navigationOpened ? "block" : "hidden"
         }`}
       >
