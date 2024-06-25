@@ -23,12 +23,12 @@ export default function Hero() {
     tl.fromTo(
       ".top-nav-option",
       { opacity: 0, x: -15 },
-      { opacity: 1, x: 0, stagger: 0.025, delay: 0.5 }
+      { opacity: 1, x: 0, stagger: 0.02, delay: 0.5 }
     )
       .fromTo(
         ".sidebar-icon",
         { opacity: 0, y: -15 },
-        { opacity: 1, y: 0, stagger: 0.025 }
+        { opacity: 1, y: 0, stagger: 0.02 }
       )
       .fromTo(
         ".code-editor-html",
@@ -49,7 +49,7 @@ export default function Hero() {
   }, []);
   return (
     <Container className="relative bg-black" id="#hero">
-      <section className="grid lg:grid-cols-10 items-center max-w-[1440px] m-auto p-5 gap-5">
+      <section className="grid lg:grid-cols-10 items-center max-w-[1440px] m-auto gap-5">
         <div className="flex flex-col gap-2 col-span-4 left-hero">
           <h1 className="font-sora text-white text-4xl font-bold">
             Your Personalized <br /> AI{" "}

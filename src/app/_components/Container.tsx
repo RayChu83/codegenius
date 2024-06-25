@@ -8,7 +8,7 @@ export default function Container({
   children: React.ReactNode;
 }) {
   return (
-    <section className={`py-10 ${className}`} id={id}>
+    <section className={`md:py-10 py-5 px-5 ${className}`} id={id}>
       {children}{" "}
     </section>
   );

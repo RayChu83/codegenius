@@ -19,7 +19,6 @@ export default function Features() {
     });
     gsap.to(".feature", {
       opacity: 1,
-      x: 0,
       stagger: 0.25,
       scrollTrigger: {
         trigger: ".feature",
@@ -27,16 +26,16 @@ export default function Features() {
     });
   }, []);
   return (
-    <Container className="max-w-[1440px] m-auto p-5 relative" id="features">
+    <Container className="max-w-[1440px] m-auto relative !pb-20" id="features">
       <h2 className="text-3xl font-semibold text-center font-sora heading opacity-0 translate-y-[15px]">
         Why Choose Our{" "}
         <span className="text-blue-primary">AI Coding Assistant</span>
       </h2>
       <section className="grid md:grid-cols-2 items-center gap-8 mt-10">
         {features.map((feature, i) => (
-          <div
+          <article
             key={i}
-            className={`md:even:translate-y-10 bg-gray-darker border border-[#555555] p-6 rounded-lg rounded-tr-[100px] ${feature?.className} feature h-full opacity-0 -translate-x-[50px]`}
+            className={`md:even:translate-y-10 bg-gray-darker border border-[#555555] p-6 rounded-lg rounded-tr-[100px] ${feature?.className} feature h-full opacity-0 relative`}
           >
             <h3 className="text-xl font-medium font-sora">{feature.heading}</h3>
             <ul className="pb-6">
@@ -48,7 +47,7 @@ export default function Features() {
               ))}
             </ul>
             <feature.icon className="absolute bottom-6 right-6 text-xl text-gray-light hover:text-white transition-colors cursor-pointer" />
-          </div>
+          </article>
         ))}
       </section>
     </Container>

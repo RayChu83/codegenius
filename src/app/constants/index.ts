@@ -97,3 +97,56 @@ export const features = [
     className: "drop-shadow-lightBlue z-1",
   },
 ];
+
+export const benefits = [
+  {
+    heading: "Enhanced Productivity",
+    bulletPoints: [
+      "Write code faster with fewer errors",
+      "Focus on building amazing projects",
+      "Automate repetitive tasks for efficiency",
+    ],
+    image: "/ai.png",
+    additionalClassNames:
+      "!col-span-6 row-span-2 drop-shadow-lightBlue flex flex-col justify-center lg:pl-10",
+  },
+  {
+    heading: "Reduced Frustration",
+    bulletPoints: [
+      "Maintain focus on creative projects",
+      "Quickly identify and resolve errors",
+      "Spend less time debugging and troubleshooting",
+    ],
+    additionalClassNames: "z-10",
+  },
+  {
+    heading: "Continuous Improvement",
+    bulletPoints: [
+      "Learn from AI's real-time suggestions",
+      "Improve coding skills consistently",
+      "Stay updated with the latest coding practices",
+    ],
+    additionalClassNames: "z-10",
+  },
+];
+
+export const roadmap = [
+  {
+    heading: "Install the Extension",
+    description:
+      "Download and install our AI assistant extension for your preferred code editor.",
+    icon: "",
+  },
+  {
+    heading: "Start Coding",
+    description:
+      "Begin coding as usual, and our AI will provide real-time suggestions and feedback.",
+    icon: "",
+  },
+  {
+    heading: "Optimize and Debug",
+    description:
+      "Utilize the AI's optimization and debugging tools to enhance your code and fix issues quickly.",
+    icon: "",
+  },
+];

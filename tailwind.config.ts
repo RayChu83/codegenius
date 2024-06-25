@@ -28,7 +28,10 @@ const config: Config = {
         },
       },
       dropShadow: {
-        lightBlue: "0 0 150px rgba(0, 174, 255, 0.25)",
+        lightBlue: "0 0 150px rgba(0, 174, 255, 0.3)",
+      },
+      gridTemplateRows: {
+        bentobox: "250px 250px",
       },
     },
   },
