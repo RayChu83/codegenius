@@ -5,6 +5,7 @@ import Benefits from "@/app/_components/Benefits";
 import HowItWorks from "@/app/_components/HowItWorks";
 import Pricing from "@/app/_components/Pricing";
 import BetaTestAdvertisement from "@/app/_components/BetaTestAdvertisement";
+import Footer from "@/app/_components/Footer";
 
 export default function LandingPage() {
   return (
@@ -16,6 +17,7 @@ export default function LandingPage() {
       <HowItWorks />
       <Pricing />
       <BetaTestAdvertisement />
+      <Footer />
     </>
   );
 }

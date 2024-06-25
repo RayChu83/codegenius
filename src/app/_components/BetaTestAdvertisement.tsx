@@ -16,7 +16,7 @@ export default function BetaTestAdvertisement() {
             Companion—experience real-time intelligent coding assistance and
             help shape the future of software development!
           </p>
-          <Button className="text-black bg-white py-2 px-3 rounded-lg border-none">
+          <Button className="text-black bg-white hover:bg-white/90 transition-colors py-2 px-3 rounded-lg border-none">
             Join now
           </Button>
         </div>

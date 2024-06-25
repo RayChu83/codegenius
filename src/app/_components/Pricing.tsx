@@ -5,6 +5,7 @@ import { FaCircleCheck } from "react-icons/fa6";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,7 @@ export default function Pricing() {
     });
   }, []);
   return (
-    <Container className="max-w-[1440px] m-auto">
+    <Container className="max-w-[1440px] m-auto" id="pricing">
       <h2 className="font-sora text-3xl font-semibold text-center pricing-heading opacity-0 translate-y-[15px]">
         Our Pricing Plans
       </h2>
@@ -45,7 +46,7 @@ export default function Pricing() {
                 ? `$${plan.price}/month`
                 : "Contact us"}
             </h2>
-            <ul>
+            <ul className="pb-6">
               {plan.bulletPoints.map((bulletPoint, j) => (
                 <li
                   key={j}
@@ -58,6 +59,9 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
+            <Button className="text-gray-light hover:text-white transition-colors font-semibold absolute bottom-6 right-6 text-sm">
+              LEARN MORE
+            </Button>
           </article>
         ))}
       </div>

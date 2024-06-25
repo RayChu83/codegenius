@@ -180,3 +180,34 @@ export const pricing = [
     additionalClassNames: "md:col-span-2 lg:col-span-1",
   },
 ];
+
+export const footerLinks = [
+  {
+    section: "Explore",
+    links: [
+      { label: "How it works", href: "#how-it-works" },
+      { label: "Features", href: "#features" },
+      { label: "Benefits", href: "#benefits" },
+      { label: "Pricing", href: "#pricing" },
+    ],
+  },
+  {
+    section: "Support",
+    links: [
+      { label: "Contact", href: null },
+      { label: "FAQs", href: null },
+      { label: "Returns", href: null },
+      { label: "Terms", href: null },
+      { label: "Privacy", href: null },
+    ],
+  },
+  {
+    section: "Company",
+    links: [
+      { label: "About us", href: null },
+      { label: "Careers", href: null },
+      { label: "Blogs", href: null },
+      { label: "Contact us", href: null },
+    ],
+  },
+];
