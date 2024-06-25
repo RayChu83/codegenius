@@ -4,22 +4,24 @@ import { navigationElements } from "@/app/constants";
 import Link from "next/link";
 import { CgMenuRight } from "react-icons/cg";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function NavigationBar() {
   const [navigationOpened, setNavigationOpened] = useState(false);
+
+  useEffect(() => {
+    if (navigationOpened) {
+      disablePageScroll();
+    } else {
+      enablePageScroll();
+    }
+    return () => enablePageScroll();
+  }, [navigationOpened]);
+
   const handleNavToggle = () => {
-    setNavigationOpened((prev) => {
-      if (prev === true) {
-        enablePageScroll();
-      } else {
-        disablePageScroll();
-      }
-      return !prev;
-    });
+    setNavigationOpened((prev) => !prev);
   };
   const handleLinkClicked = () => {
-    enablePageScroll();
     setNavigationOpened(false);
   };
   return (
@@ -50,8 +52,8 @@ export default function NavigationBar() {
         onClick={handleNavToggle}
       />
       <div
-        className={`absolute w-full h-[100vh] top-[98px] left-0 bg-black transition-opacity md:opacity-0 duration-300 ${
-          navigationOpened ? "opacity-100" : "opacity-0"
+        className={`absolute w-full h-[100vh] top-[98px] left-0 bg-black md:hidden ${
+          navigationOpened ? "block" : "hidden"
         }`}
       >
         <nav className="w-full h-full flex flex-col absolute top-[30%] text-center gap-12">
@@ -59,7 +61,7 @@ export default function NavigationBar() {
             <Link
               href={href}
               key={index}
-              className="text-gray-light hover:text-white transition-colors uppercase font-medium text-2xl"
+              className="text-gray-light hover:text-white transition-colors uppercase font-semibold text-2xl"
               onClick={handleLinkClicked}
             >
               {label}
