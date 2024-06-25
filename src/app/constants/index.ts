@@ -94,7 +94,6 @@ export const features = [
       "Ensures a cohesive coding environment",
     ],
     icon: AiFillThunderbolt,
-    className: "drop-shadow-lightBlue z-1",
   },
 ];
 
@@ -148,5 +147,36 @@ export const roadmap = [
     description:
       "Utilize the AI's optimization and debugging tools to enhance your code and fix issues quickly.",
     icon: GrOptimize,
+  },
+];
+
+export const pricing = [
+  {
+    name: "Free",
+    price: 0,
+    bulletPoints: ["Basic code suggestions", "Community support"],
+  },
+  {
+    name: "Professional",
+    price: 19,
+    bulletPoints: [
+      "Customizable code linting and formatting",
+      "Advanced code suggestions and intellisense",
+      "Automated debugging",
+      "Code optimization",
+      "Personalized support",
+    ],
+    additionalClassNames: "drop-shadow-lightBlue !z-10",
+  },
+  {
+    name: "Enterprise",
+    price: null,
+    bulletPoints: [
+      "Includes all professional features",
+      "Custom integrations",
+      "24/7 dedicated support",
+      "Team collaboration tools",
+    ],
+    additionalClassNames: "md:col-span-2 lg:col-span-1",
   },
 ];

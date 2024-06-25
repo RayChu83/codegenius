@@ -26,8 +26,11 @@ export default function Features() {
     });
   }, []);
   return (
-    <Container className="max-w-[1440px] m-auto relative !pb-20" id="features">
-      <h2 className="text-3xl font-semibold text-center font-sora features-heading opacity-0 translate-y-[15px]">
+    <Container
+      className="max-w-[1440px] m-auto relative !md:pb-20"
+      id="features"
+    >
+      <h2 className="text-3xl font-semibold text-center font-sora features-heading relative z-50 opacity-0 translate-y-[15px]">
         Why Choose Our AI Coding Assistant
       </h2>
       <section className="grid md:grid-cols-2 items-center gap-8 mt-10">
@@ -43,7 +46,9 @@ export default function Features() {
                   key={j}
                   className="flex items-center gap-2 text-gray-light mb-1"
                 >
-                  <FaCircleCheck className="text-blue-primary" />
+                  <span>
+                    <FaCircleCheck className="text-blue-primary" />
+                  </span>
                   {bulletPoint}
                 </li>
               ))}

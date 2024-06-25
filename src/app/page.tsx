@@ -2,7 +2,9 @@ import Hero from "@/app/_components/Hero";
 import NavigationBar from "@/app/_components/NavigationBar";
 import Features from "@/app/_components/Features";
 import Benefits from "@/app/_components/Benefits";
-import HowItWorks from "@/app//_components/HowItWorks";
+import HowItWorks from "@/app/_components/HowItWorks";
+import Pricing from "@/app/_components/Pricing";
+import BetaTestAdvertisement from "@/app/_components/BetaTestAdvertisement";
 
 export default function LandingPage() {
   return (
@@ -12,6 +14,8 @@ export default function LandingPage() {
       <Features />
       <Benefits />
       <HowItWorks />
+      <Pricing />
+      <BetaTestAdvertisement />
     </>
   );
 }

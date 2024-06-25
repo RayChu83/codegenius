@@ -30,14 +30,14 @@ export default function Benefits() {
   }, []);
   return (
     <Container className="max-w-[1440px] m-auto relative" id="benefits">
-      <h2 className="text-3xl font-semibold font-sora text-center benefits-heading opacity-0 translate-y-[15px]">
+      <h2 className="text-3xl font-semibold font-sora text-center benefits-heading relative z-50 opacity-0 translate-y-[15px]">
         Transform your coding experience
       </h2>
       <div className="md:grid grid-cols-10 md:grid-rows-bentobox gap-6 mt-10 flex flex-col">
         {benefits.map((benefit, i) => (
           <article
             key={i}
-            className={`bg-gray-darker border border-[#555555] p-6 ${benefit?.additionalClassNames} rounded-lg relative md:col-span-4 benefit opacity-0 translate-y-[50px]`}
+            className={`bg-gray-darker border border-[#555555] p-6 ${benefit?.additionalClassNames} rounded-lg relative md:col-span-4 benefit opacity-0 translate-y-10`}
           >
             <h3 className="text-xl font-medium font-sora">{benefit.heading}</h3>
             <ul>
@@ -46,7 +46,9 @@ export default function Benefits() {
                   key={j}
                   className="flex items-center gap-2 text-gray-light mb-1"
                 >
-                  <FaCircleCheck className="text-blue-primary" />
+                  <span>
+                    <FaCircleCheck className="text-blue-primary" />
+                  </span>
                   {bulletPoint}
                 </li>
               ))}
