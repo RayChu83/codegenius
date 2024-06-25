@@ -22,7 +22,7 @@ export default function Benefits() {
     gsap.to(".benefit", {
       opacity: 1,
       y: 0,
-      stagger: 0.25,
+      stagger: 0.3,
       scrollTrigger: {
         trigger: ".benefit",
       },
@@ -31,8 +31,7 @@ export default function Benefits() {
   return (
     <Container className="max-w-[1440px] m-auto relative" id="benefits">
       <h2 className="text-3xl font-semibold font-sora text-center benefits-heading opacity-0 translate-y-[15px]">
-        Transform your{" "}
-        <span className="text-blue-primary">coding experience</span>
+        Transform your coding experience
       </h2>
       <div className="md:grid grid-cols-10 md:grid-rows-bentobox gap-6 mt-10 flex flex-col">
         {benefits.map((benefit, i) => (

@@ -3,15 +3,15 @@ import Container from "./Container";
 
 export default function HowItWorks() {
   return (
-    <Container className="m-auto max-w-[1280px]">
+    <Container className="m-auto max-w-[1280px]" id="how-it-works">
       <h2 className="text-3xl font-semibold text-center">
-        How CodeGenius works
+        How our AI Coding Assistant works
       </h2>
-      <section className="relative mt-10">
+      <section className="relative mt-10 md:pl-0 pl-12">
         {roadmap.map((step, index) => (
           <div key={index} className="md:w-1/2 even:md:ml-auto">
             <div
-              className={`absolute bg-gray-dark rounded-full font-semibold p-2 w-10 h-10 flex items-center justify-center left-0 md:left-1/2 -translate-x-1/2`}
+              className={`absolute bg-gray-dark rounded-full font-semibold p-2 w-10 h-10 flex items-center justify-center left-4 md:left-1/2 -translate-x-1/2`}
             >
               {index + 1}
             </div>
@@ -30,7 +30,7 @@ export default function HowItWorks() {
             </article>
           </div>
         ))}
-        <div className="absolute h-full w-2 bg-gray-dark top-0 left-0 md:left-1/2 -translate-x-1/2 -z-10" />
+        <div className="absolute h-full w-2 bg-gray-dark top-0 left-4 md:left-1/2 -translate-x-1/2 -z-10 rounded-full" />
       </section>
     </Container>
   );

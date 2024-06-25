@@ -19,7 +19,7 @@ export default function Features() {
     });
     gsap.to(".feature", {
       opacity: 1,
-      stagger: 0.25,
+      stagger: 0.3,
       scrollTrigger: {
         trigger: ".feature",
       },
@@ -28,8 +28,7 @@ export default function Features() {
   return (
     <Container className="max-w-[1440px] m-auto relative !pb-20" id="features">
       <h2 className="text-3xl font-semibold text-center font-sora features-heading opacity-0 translate-y-[15px]">
-        Why Choose Our{" "}
-        <span className="text-blue-primary">AI Coding Assistant</span>
+        Why Choose Our AI Coding Assistant
       </h2>
       <section className="grid md:grid-cols-2 items-center gap-8 mt-10">
         {features.map((feature, i) => (

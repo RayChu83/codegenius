@@ -62,7 +62,6 @@ export const features = [
       "Enhances coding efficiency ",
     ],
     icon: FaClock,
-    className: "drop-shadow-lightBlue z-1",
   },
   {
     heading: "Automated Debugging",
