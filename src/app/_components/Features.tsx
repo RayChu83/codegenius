@@ -10,11 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Features() {
   useGSAP(() => {
-    gsap.to(".heading", {
+    gsap.to(".features-heading", {
       opacity: 1,
       y: 0,
       scrollTrigger: {
-        trigger: ".heading",
+        trigger: ".features-heading",
       },
     });
     gsap.to(".feature", {
@@ -27,7 +27,7 @@ export default function Features() {
   }, []);
   return (
     <Container className="max-w-[1440px] m-auto relative !pb-20" id="features">
-      <h2 className="text-3xl font-semibold text-center font-sora heading opacity-0 translate-y-[15px]">
+      <h2 className="text-3xl font-semibold text-center font-sora features-heading opacity-0 translate-y-[15px]">
         Why Choose Our{" "}
         <span className="text-blue-primary">AI Coding Assistant</span>
       </h2>
@@ -35,12 +35,15 @@ export default function Features() {
         {features.map((feature, i) => (
           <article
             key={i}
-            className={`md:even:translate-y-10 bg-gray-darker border border-[#555555] p-6 rounded-lg rounded-tr-[100px] ${feature?.className} feature h-full opacity-0 relative`}
+            className={`md:even:translate-y-10 bg-gray-darker border border-[#555555] p-6 rounded-lg ${feature?.className} feature h-full opacity-0 relative`}
           >
             <h3 className="text-xl font-medium font-sora">{feature.heading}</h3>
             <ul className="pb-6">
               {feature.bulletPoints.map((bulletPoint, j) => (
-                <li key={j} className="flex items-center gap-2 text-gray-light">
+                <li
+                  key={j}
+                  className="flex items-center gap-2 text-gray-light mb-1"
+                >
                   <FaCircleCheck className="text-blue-primary" />
                   {bulletPoint}
                 </li>

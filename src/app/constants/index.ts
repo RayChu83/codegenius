@@ -1,8 +1,9 @@
 import { AiFillThunderbolt } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
-import { FaClock } from "react-icons/fa";
+import { FaClock, FaCode } from "react-icons/fa";
 import { GoDash } from "react-icons/go";
 import { GrOptimize } from "react-icons/gr";
+import { IoMdDownload } from "react-icons/io";
 import { IoBug, IoCloseSharp, IoDocumentsOutline } from "react-icons/io5";
 import { PiRectangleDashedBold } from "react-icons/pi";
 import {
@@ -135,18 +136,18 @@ export const roadmap = [
     heading: "Install the Extension",
     description:
       "Download and install our AI assistant extension for your preferred code editor.",
-    icon: "",
+    icon: IoMdDownload,
   },
   {
     heading: "Start Coding",
     description:
       "Begin coding as usual, and our AI will provide real-time suggestions and feedback.",
-    icon: "",
+    icon: FaCode,
   },
   {
     heading: "Optimize and Debug",
     description:
       "Utilize the AI's optimization and debugging tools to enhance your code and fix issues quickly.",
-    icon: "",
+    icon: GrOptimize,
   },
 ];

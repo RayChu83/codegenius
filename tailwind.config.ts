@@ -33,6 +33,9 @@ const config: Config = {
       gridTemplateRows: {
         bentobox: "250px 250px",
       },
+      screens: {
+        xs: { raw: "(max-width: 500px)" },
+      },
     },
   },
   plugins: [],

@@ -40,7 +40,7 @@ export default function Hero() {
         { right: 100, opacity: 0 },
         { right: 0, opacity: 1, duration: 0.4, ease: "power2.inOut" }
       )
-      .to(".ai-dashboard-suggesting", { opacity: 0, delay: 2 })
+      .to(".ai-dashboard-suggesting", { opacity: 0, delay: 1 })
       .fromTo(
         ".ai-dashboard-response",
         { x: -15, opacity: 0 },
