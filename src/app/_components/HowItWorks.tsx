@@ -8,6 +8,19 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 export default function HowItWorks() {
   useGSAP(() => {
+    gsap.to(".how-it-works-heading", {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: ".how-it-works-heading",
+      },
+    });
+    gsap.to(".road", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".roadmap-step",
+      },
+    });
     gsap.to(".roadmap-step", {
       opacity: 1,
       y: 0,
@@ -19,7 +32,7 @@ export default function HowItWorks() {
   }, []);
   return (
     <Container className="m-auto max-w-[1280px]" id="how-it-works">
-      <h2 className="text-3xl font-semibold text-center .how-it-works-heading relative z-50">
+      <h2 className="text-3xl font-semibold text-center how-it-works-heading opacity-0 -translate-y-15 relative z-50">
         How our AI Coding Assistant works
       </h2>
       <section className="relative mt-10 md:pl-0 pl-12">
@@ -45,7 +58,7 @@ export default function HowItWorks() {
             </article>
           </div>
         ))}
-        <div className="absolute h-full w-2 bg-gray-dark top-0 left-4 md:left-1/2 -translate-x-1/2 -z-10 rounded-full" />
+        <div className="absolute h-full w-2 bg-gray-dark top-0 left-4 md:left-1/2 -translate-x-1/2 -z-10 rounded-full road opacity-0" />
       </section>
     </Container>
   );

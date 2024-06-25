@@ -52,6 +52,14 @@ export const codeEditorSidebarBottomElements = [
   { icon: VscSettingsGear },
 ];
 
+export const heroHeadline = [
+  { content: "Your" },
+  { content: "Personalized" },
+  { content: "AI" },
+  { content: "Coding", additionalClassNames: "font-black" },
+  { content: "Companion", additionalClassNames: "font-black" },
+];
+
 export const features = [
   {
     heading: "Real-Time Code Suggestions",

@@ -29,7 +29,7 @@ export default function Pricing() {
   }, []);
   return (
     <Container className="max-w-[1440px] m-auto" id="pricing">
-      <h2 className="font-sora text-3xl font-semibold text-center pricing-heading opacity-0 translate-y-[15px]">
+      <h2 className="font-sora text-3xl font-semibold text-center pricing-heading opacity-0 translate-y-[15px] relative z-50">
         Our Pricing Plans
       </h2>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 mt-10 gap-6 relative">

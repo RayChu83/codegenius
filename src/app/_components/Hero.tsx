@@ -12,19 +12,28 @@ import {
   codeEditorRightNavigationElements,
   codeEditorSidebarBottomElements,
   codeEditorSidebarElements,
+  heroHeadline,
 } from "@/app/constants";
 
-const tl = gsap.timeline();
+const leftHeroTl = gsap.timeline();
+const rightHeroTl = gsap.timeline();
 
 export default function Hero() {
   useGSAP(() => {
-    gsap.fromTo(".left-hero", { x: -200, opacity: 0 }, { x: 0, opacity: 1 });
-    gsap.fromTo(".code-editor", { y: 200, opacity: 0 }, { y: 0, opacity: 1 });
-    tl.fromTo(
-      ".top-nav-option",
-      { opacity: 0, x: -15 },
-      { opacity: 1, x: 0, stagger: 0.02, delay: 0.5 }
-    )
+    leftHeroTl
+      .to(".headline-word", {
+        opacity: 1,
+        stagger: { each: 0.2 },
+        delay: 0.5,
+      })
+      .to(".cta", { opacity: 1 });
+    rightHeroTl
+      .fromTo(".code-editor", { y: 200, opacity: 0 }, { y: 0, opacity: 1 })
+      .fromTo(
+        ".top-nav-option",
+        { opacity: 0, x: -15 },
+        { opacity: 1, x: 0, stagger: 0.02, delay: 0.5 }
+      )
       .fromTo(
         ".sidebar-icon",
         { opacity: 0, y: -15 },
@@ -48,16 +57,23 @@ export default function Hero() {
       );
   }, []);
   return (
-    <Container className="relative bg-black" id="#hero">
+    <Container className="relative bg-black mt-[120px]" id="#hero">
       <section className="grid lg:grid-cols-10 items-center max-w-[1440px] m-auto gap-5">
         <div className="flex flex-col gap-2 col-span-4 left-hero">
           <h1 className="font-sora text-white text-4xl font-bold">
-            Your Personalized <br /> AI{" "}
-            <span className="font-black">Coding Companion</span>
+            {heroHeadline.map((word, index) => (
+              <span
+                key={index}
+                className={`headline-word ${word.additionalClassNames} opacity-0`}
+              >
+                {index === 2 && <br />}
+                {word.content}{" "}
+              </span>
+            ))}
           </h1>
           <Link
             href="#features"
-            className="bg-blue-primary hover:bg-blue-primary/90 transition-colors text-white py-2 px-4 rounded-md text-base font-inter font-medium w-fit"
+            className="bg-blue-primary hover:bg-blue-primary/90 transition-colors text-white py-2 px-4 rounded-md text-base font-inter font-medium w-fit cta opacity-0"
           >
             Check it out
           </Link>
