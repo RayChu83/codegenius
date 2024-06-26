@@ -32,7 +32,7 @@ export default function NavigationBar() {
           src="/logo.png"
           alt="logo"
           width={188}
-          height={75}
+          height={28}
           className="pointer-events-none"
         />
       </Link>

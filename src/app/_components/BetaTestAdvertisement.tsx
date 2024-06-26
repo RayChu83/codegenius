@@ -25,7 +25,7 @@ export default function BetaTestAdvertisement() {
           width={0}
           height={0}
           sizes="100vw"
-          className="h-full w-auto absolute right-0 bottom-0 md:opacity-100 opacity-25 transition-opacity duration-300 object-cover"
+          className="h-full w-auto absolute right-0 bottom-0 md:opacity-100 opacity-25 transition-opacity duration-300 object-cover pointer-events-none"
           alt="ai"
         />
       </div>

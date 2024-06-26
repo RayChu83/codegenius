@@ -128,8 +128,8 @@ export default function Hero() {
             <Image
               src="/html.png"
               alt="html"
-              className="absolute top-8 left-5 pointer-events-none code-editor-html"
-              height={150}
+              className="absolute top-8 left-5 pointer-events-none code-editor-html "
+              height={114}
               width={200}
             />
           </section>
@@ -138,8 +138,8 @@ export default function Hero() {
               src="/logo.png"
               alt="logo"
               width={150}
-              height={60}
-              className="absolute top-6 left-1/2 -translate-x-1/2"
+              height={22}
+              className="absolute top-6 left-1/2 -translate-x-1/2 pointer-events-none"
             />
             <p className="text-[10px] text-gray-light absolute top-14 text-center w-full">
               Your AI coding companion
