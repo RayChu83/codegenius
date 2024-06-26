@@ -60,7 +60,7 @@ export default function NavigationBar() {
         />
       )}
       <div
-        className={`absolute w-full h-[100vh] top-[97px] left-0 bg-black md:hidden ${
+        className={`absolute w-full h-[100vh] top-[85px] left-0 bg-black md:hidden ${
           navigationOpened ? "block" : "hidden"
         }`}
       >
