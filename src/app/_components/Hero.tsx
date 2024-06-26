@@ -139,19 +139,23 @@ export default function Hero() {
               alt="logo"
               width={150}
               height={60}
-              className="absolute top-2 left-1/2 -translate-x-1/2"
+              className="absolute top-6 left-1/2 -translate-x-1/2"
             />
             <p className="text-[10px] text-gray-light absolute top-14 text-center w-full">
               Your AI coding companion
             </p>
-            <ul className="top-20 absolute w-full space-y-2 px-3">
-              {Array.from(new Array(6)).map((item, index) => (
-                <li
-                  key={index}
-                  className={`w-full h-3 bg-gray-dark rounded-xl ai-dashboard-response`}
-                />
-              ))}
-            </ul>
+            <p className="ai-dashboard-response text-[10px] absolute top-20 text-center px-4 font-normal">
+              The provided code is HTML, also known as{" "}
+              <strong>HyperText Markup Language</strong>, which is commonly
+              utilized for constructing web applications. Currently, there are{" "}
+              <strong>no errors detected</strong>. However it is missing the
+              following meta tag for responsive web design:{" "}
+              <strong>
+                {`<meta name="viewport" content="width=device-width, initial-scale=1"></meta>`}
+              </strong>
+              Currently, nothing is being displayed on the screen. Add content
+              to the body to display something.
+            </p>
             <div className="px-3 absolute bottom-2 w-full ">
               <div className="w-full rounded-xl text-[10px] text-gray-light bg-black/40 p-2 flex items-center gap-2 ai-dashboard-suggesting">
                 <AiOutlineLoading3Quarters className="animate-spin text-blue-primary" />
