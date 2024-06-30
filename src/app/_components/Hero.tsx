@@ -8,12 +8,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import {
+  aiResponse,
   codeEditorNavigationElements,
   codeEditorRightNavigationElements,
   codeEditorSidebarBottomElements,
   codeEditorSidebarElements,
   heroHeadline,
 } from "@/app/constants";
+import Typewriter from "./Typewriter";
 
 const leftHeroTl = gsap.timeline();
 const rightHeroTl = gsap.timeline();
@@ -50,11 +52,7 @@ export default function Hero() {
         { right: 0, opacity: 1, duration: 0.4, ease: "power2.inOut" }
       )
       .to(".ai-dashboard-suggesting", { opacity: 0, delay: 1 })
-      .fromTo(
-        ".ai-dashboard-response",
-        { x: -15, opacity: 0 },
-        { x: 0, opacity: 1, stagger: 0.175 }
-      );
+      .fromTo(".ai-dashboard-response", { opacity: 0 }, { opacity: 100 });
   }, []);
   return (
     <Container className="relative bg-black mt-24" id="#hero">
@@ -79,7 +77,7 @@ export default function Hero() {
           </Link>
         </div>
         <div className="flex items-center gap-5 h-full sm:h-96 w-full col-span-6 sm:flex-row flex-col drop-shadow-lightBlue">
-          <section className="bg-[#1F1F1F] border border-[#555555] rounded-lg sm:h-full h-[250px] sm:w-[70%] w-full relative code-editor z-[2]">
+          <section className="bg-[#1F1F1F] border border-[#555555] rounded-lg sm:h-full h-[250px] sm:w-[66%] w-full relative code-editor z-[2]">
             <nav className="absolute top-2 flex justify-between w-full px-2 z-[2]">
               <ul className="text-[10px] text-gray-light flex items-center gap-2">
                 {codeEditorNavigationElements.map((navElement, index) => (
@@ -97,9 +95,9 @@ export default function Hero() {
                 </li>
               </ul>
               <ul className="text-[10px] text-gray-light flex items-center gap-2">
-                {codeEditorRightNavigationElements.map((naveElement, index) => (
-                  <naveElement.icon
-                    className={`top-nav-option cursor-pointer hover:text-white transition-colors ${naveElement?.className}`}
+                {codeEditorRightNavigationElements.map((navElement, index) => (
+                  <div
+                    className={`top-nav-option cursor-pointer transition-colors ${navElement.className} w-2 h-2 rounded-full drop-shadow-sm`}
                     key={index}
                   />
                 ))}
@@ -133,7 +131,7 @@ export default function Hero() {
               width={200}
             />
           </section>
-          <section className="bg-[#1F1F1F] border border-[#555555] rounded-lg sm:h-full h-[250px] sm:w-[30%] w-full relative ai-dashboard">
+          <section className="bg-[#1F1F1F] border border-[#555555] rounded-lg sm:h-full h-[250px] sm:w-[34%] w-full relative ai-dashboard">
             <Image
               src="/logo.png"
               alt="logo"
@@ -144,18 +142,12 @@ export default function Hero() {
             <p className="text-[10px] text-gray-light absolute top-14 text-center w-full">
               Your AI coding companion
             </p>
-            <p className="ai-dashboard-response text-[10px] absolute top-20 text-center px-4 font-normal">
-              The provided code is HTML, also known as{" "}
-              <strong>HyperText Markup Language</strong>, which is commonly
-              utilized for constructing web applications. Currently, there are{" "}
-              <strong>no errors detected</strong>. However it is missing the
-              following meta tag for responsive web design:{" "}
-              <strong>
-                {`<meta name="viewport" content="width=device-width, initial-scale=1"></meta>`}
-              </strong>
-              Currently, nothing is being displayed on the screen. Add content
-              to the body to display something.
-            </p>
+            <Typewriter
+              text={aiResponse}
+              textDelay={25}
+              initialDelay={5150}
+              classNames="text-[10px] text-white absolute top-20 mx-4 p-3 bg-black/25 rounded-lg ai-dashboard-response"
+            />
             <div className="px-3 absolute bottom-2 w-full ">
               <div className="w-full rounded-xl text-[10px] text-gray-light bg-black/40 p-2 flex items-center gap-2 ai-dashboard-suggesting">
                 <AiOutlineLoading3Quarters className="animate-spin text-blue-primary" />

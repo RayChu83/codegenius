@@ -1,11 +1,9 @@
 import { AiFillThunderbolt } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { FaClock, FaCode } from "react-icons/fa";
-import { GoDash } from "react-icons/go";
 import { GrOptimize } from "react-icons/gr";
 import { IoMdDownload } from "react-icons/io";
-import { IoBug, IoCloseSharp, IoDocumentsOutline } from "react-icons/io5";
-import { PiRectangleDashedBold } from "react-icons/pi";
+import { IoBug, IoDocumentsOutline } from "react-icons/io5";
 import {
   VscDebugRerun,
   VscExtensions,
@@ -34,9 +32,9 @@ export const codeEditorNavigationElements = [
 ];
 
 export const codeEditorRightNavigationElements = [
-  { icon: GoDash },
-  { icon: PiRectangleDashedBold },
-  { icon: IoCloseSharp, className: "hover:text-red-500" },
+  { className: "bg-alter hover:bg-alter/80" },
+  { className: "bg-minimize hover:bg-minimize/80" },
+  { className: "bg-close hover:bg-close/80" },
 ];
 
 export const codeEditorSidebarElements = [
@@ -59,6 +57,9 @@ export const heroHeadline = [
   { content: "Coding", additionalClassNames: "font-black" },
   { content: "Companion", additionalClassNames: "font-black" },
 ];
+
+export const aiResponse =
+  'The provided code is HTML, also known as HyperText Markup Language, which is commonly utilized for constructing web applications. Currently, there are no errors detected. However it is missing the following meta tag for responsive web design: <meta name="viewport" content="width=device-width, initial-scale=1"></meta>. Currently, nothing is being displayed on the screen. Add content to the body to display something. ';
 
 export const features = [
   {

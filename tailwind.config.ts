@@ -8,6 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        deepPulse: "deepPulse 1s infinite",
+      },
+      keyframes: {
+        deepPulse: {
+          "0%, 100%": {
+            opacity: "0",
+          },
+          "50%": {
+            opacity: "1",
+          },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -26,6 +39,9 @@ const config: Config = {
           dark: "#555555",
           darker: "#1F1F1F",
         },
+        close: "#f85757",
+        minimize: "#e6c122",
+        alter: "#4fc12f",
       },
       dropShadow: {
         lightBlue: "0 0 150px rgba(0, 174, 255, 0.3)",
