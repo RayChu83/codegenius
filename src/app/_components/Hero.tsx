@@ -96,7 +96,7 @@ export default function Hero() {
               </ul>
               <ul className="text-[10px] text-gray-light flex items-center gap-2">
                 {codeEditorRightNavigationElements.map((navElement, index) => (
-                  <div
+                  <li
                     className={`top-nav-option cursor-pointer transition-colors ${navElement.className} w-2 h-2 rounded-full drop-shadow-sm`}
                     key={index}
                   />

@@ -38,9 +38,9 @@ export default function Pricing() {
             key={i}
             className={`bg-gray-darker border border-[#555555] p-6 rounded-lg relative ${plan?.additionalClassNames} z-20 pricing-plan opacity-0 -translate-x-10`}
           >
-            <h4 className="text-blue-primary text-center text-lg">
+            <p className="text-blue-primary text-center text-lg">
               [{plan.name}]
-            </h4>
+            </p>
             <h2 className="font-sora text-3xl font-bold text-center my-4">
               {Number.isInteger(plan.price)
                 ? `$${plan.price}/month`
