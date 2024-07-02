@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://codegeniusai.vercel.app">
-    <img src="https://i.ibb.co/r0K7DVh/Code-Genius-Repo-Banner.png" alt="code genius ai banner" />
+    <img src="https://i.ibb.co/d0gW8yw/Code-Genius-Repo-Banner.png" alt="code genius ai banner" />
   </a>
   <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript" />
   <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="next js"/>
