@@ -13,11 +13,12 @@ import {
 } from "react-icons/vsc";
 
 export const navigationElements = [
-  { href: "#hero", label: "Home" },
-  { href: "#features", label: "Features" },
-  { href: "#benefits", label: "Benefits" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "#features", label: "Features", type: "middle" },
+  { href: "#benefits", label: "Benefits", type: "middle" },
+  { href: "#how-it-works", label: "How it works", type: "middle" },
+  { href: "#pricing", label: "Pricing", type: "middle" },
+  { href: "#about", label: "About us", type: "right" },
+  { href: "#contact", label: "Contact Us", type: "right" },
 ];
 
 export const codeEditorNavigationElements = [
@@ -64,7 +65,7 @@ export const aiResponse =
 export const features = [
   {
     heading: "Real-Time Code Suggestions",
-    bulletPoints: [
+    highlights: [
       "Recognizes coding patterns and corrects syntax errors",
       "Offers code snippets to speed up development",
       "Provides context-aware recommendations",
@@ -74,7 +75,7 @@ export const features = [
   },
   {
     heading: "Automated Debugging",
-    bulletPoints: [
+    highlights: [
       "Scans for bugs and errors",
       "Highlights errors and problematic sections",
       "Suggests quick and effective fixes",
@@ -85,7 +86,7 @@ export const features = [
   },
   {
     heading: "Code Optimization",
-    bulletPoints: [
+    highlights: [
       "Provides efficiency improvement suggestions",
       "Reduces overall resource consumption significantly",
       "Identifies and eliminates redundant code",
@@ -96,7 +97,7 @@ export const features = [
   },
   {
     heading: "Seamless Integration",
-    bulletPoints: [
+    highlights: [
       "Compatible with popular code editors",
       "Works with version control systems",
       "Integrates smoothly into existing workflows",
@@ -109,7 +110,7 @@ export const features = [
 export const benefits = [
   {
     heading: "Enhanced Productivity",
-    bulletPoints: [
+    highlights: [
       "Write code faster with fewer errors",
       "Focus on building amazing projects",
       "Automate repetitive tasks for efficiency",
@@ -120,7 +121,7 @@ export const benefits = [
   },
   {
     heading: "Reduced Frustration",
-    bulletPoints: [
+    highlights: [
       "Maintain focus on creative projects",
       "Quickly identify and resolve errors",
       "Spend less time debugging and troubleshooting",
@@ -129,7 +130,7 @@ export const benefits = [
   },
   {
     heading: "Continuous Improvement",
-    bulletPoints: [
+    highlights: [
       "Learn from AI's real-time suggestions",
       "Improve coding skills consistently",
       "Stay updated with the latest coding practices",
@@ -163,12 +164,12 @@ export const pricing = [
   {
     name: "Free",
     price: 0,
-    bulletPoints: ["Basic code suggestions", "Community support"],
+    highlights: ["Basic code suggestions", "Community support"],
   },
   {
     name: "Professional",
     price: 19,
-    bulletPoints: [
+    highlights: [
       "Customizable code linting and formatting",
       "Advanced code suggestions and intellisense",
       "Automated debugging",
@@ -180,7 +181,7 @@ export const pricing = [
   {
     name: "Enterprise",
     price: null,
-    bulletPoints: [
+    highlights: [
       "Includes all professional features",
       "Custom integrations",
       "24/7 dedicated support",

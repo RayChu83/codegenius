@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 export default function HowItWorks() {
   useGSAP(() => {
-    gsap.to(".how-it-works-heading", {
+    gsap.to("#how-it-works-heading", {
       opacity: 1,
       y: 0,
       scrollTrigger: {
@@ -32,7 +32,7 @@ export default function HowItWorks() {
   }, []);
   return (
     <Container className="m-auto max-w-[1280px]" id="how-it-works">
-      <h2 className="text-3xl font-semibold text-center how-it-works-heading opacity-0 -translate-y-15 relative z-50">
+      <h2 className="heading" id="how-it-works-heading">
         How our AI Coding Assistant works
       </h2>
       <section className="relative mt-10 md:pl-0 pl-12">
@@ -44,17 +44,17 @@ export default function HowItWorks() {
               {index + 1}
             </div>
             <article
-              className={`roadmap-step opacity-0 translate-y-10 md:w-4/5 w-full bg-gray-darker p-6 rounded-lg border border-[#555555] mb-6 ${
+              className={`roadmap-step opacity-0 translate-y-10 md:w-4/5 w-full card p-6 mb-6 ${
                 (index + 1) % 2 ? "md:mr-auto" : "md:ml-auto"
               }`}
             >
-              <h3 className="text-blue-primary font-sora text-lg flex items-center">
+              <h3 className="roadmap-heading">
                 {index + 1}. {step.heading}
-                <span className="ml-auto text-gray-light hover:text-white transition-colors cursor-pointer">
+                <span className="ml-auto interactive-element">
                   <step.icon />
                 </span>
               </h3>
-              <p className="text-gray-light">{step.description}</p>
+              <p className="card-description">{step.description}</p>
             </article>
           </div>
         ))}

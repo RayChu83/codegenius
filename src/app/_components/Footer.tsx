@@ -36,10 +36,7 @@ export default function Footer() {
                 <h3 className="font-sora text-lg font-medium">{section}</h3>
                 <ul>
                   {links.map(({ label, href }, j) => (
-                    <li
-                      key={j}
-                      className="text-gray-light font-medium hover:text-white transition-colors"
-                    >
+                    <li key={j} className="interactive-element">
                       <Link href={href || ""}>{label}</Link>
                     </li>
                   ))}

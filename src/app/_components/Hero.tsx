@@ -71,19 +71,19 @@ export default function Hero() {
           </h1>
           <Link
             href="#features"
-            className="bg-blue-primary hover:bg-blue-primary/90 transition-colors text-white py-2 px-4 rounded-md text-base font-inter font-medium w-fit cta opacity-0"
+            className="bg-blue-primary hover:bg-blue-primary/90 transition-colors text-white py-2 px-3 rounded-md text-base font-inter font-medium w-fit cta opacity-0"
           >
-            Check it out
+            Learn more
           </Link>
         </div>
         <div className="flex items-center gap-5 h-full sm:h-96 w-full col-span-6 sm:flex-row flex-col drop-shadow-lightBlue">
-          <section className="bg-[#1F1F1F] border border-[#555555] rounded-lg sm:h-full h-[250px] sm:w-[66%] w-full relative code-editor z-[2]">
+          <section className="card sm:h-full h-[250px] sm:w-[66%] w-full relative code-editor z-[2]">
             <nav className="absolute top-2 flex justify-between w-full px-2 z-[2]">
-              <ul className="text-[10px] text-gray-light flex items-center gap-2">
+              <ul className="text-[10px] flex items-center gap-2">
                 {codeEditorNavigationElements.map((navElement, index) => (
                   <li
                     key={index}
-                    className={`top-nav-option cursor-pointer hover:text-white transition-colors ${
+                    className={`top-nav-option interactive-element ${
                       navElement.hiddenOnBigScreens && "sm:block hidden"
                     }`}
                   >
@@ -94,7 +94,7 @@ export default function Hero() {
                   <BsThreeDots />
                 </li>
               </ul>
-              <ul className="text-[10px] text-gray-light flex items-center gap-2">
+              <ul className="text-[10px] flex items-center gap-2">
                 {codeEditorRightNavigationElements.map((navElement, index) => (
                   <li
                     className={`top-nav-option cursor-pointer transition-colors ${navElement.className} w-2 h-2 rounded-full drop-shadow-sm`}
@@ -107,7 +107,7 @@ export default function Hero() {
               <div className="text-base text-gray-light space-y-2">
                 {codeEditorSidebarElements.map((sidebarElement, index) => (
                   <sidebarElement.icon
-                    className="sidebar-icon cursor-pointer hover:text-white transition-colors"
+                    className="sidebar-icon interactive-element"
                     key={index}
                   />
                 ))}
@@ -131,7 +131,7 @@ export default function Hero() {
               width={200}
             />
           </section>
-          <section className="bg-[#1F1F1F] border border-[#555555] rounded-lg sm:h-full h-[250px] sm:w-[34%] w-full relative ai-dashboard">
+          <section className="card sm:h-full h-[250px] sm:w-[34%] w-full relative ai-dashboard">
             <Image
               src="/logo.png"
               alt="logo"
@@ -139,14 +139,14 @@ export default function Hero() {
               height={22}
               className="absolute top-6 left-1/2 -translate-x-1/2 pointer-events-none"
             />
-            <p className="text-[10px] text-gray-light absolute top-14 text-center w-full">
+            <p className="card-description text-[10px] absolute top-14 text-center w-full">
               Your AI coding companion
             </p>
             <Typewriter
               text={aiResponse}
               textDelay={25}
               initialDelay={5150}
-              classNames="text-[10px] text-white absolute top-20 mx-4 p-3 bg-black/25 rounded-lg ai-dashboard-response"
+              classNames="text-[9px] text-white absolute top-20 mx-4 p-3 bg-black/25 rounded-lg ai-dashboard-response"
             />
             <div className="px-3 absolute bottom-2 w-full ">
               <div className="w-full rounded-xl text-[10px] text-gray-light bg-black/40 p-2 flex items-center gap-2 ai-dashboard-suggesting">

@@ -1,0 +1,15 @@
+.card {
+  @apply bg-gray-darker border border-[#555555] rounded-lg;
+  .roadmap-heading {
+    @apply text-blue-primary font-sora text-lg flex items-center mb-1;
+  }
+  .card-heading {
+    @apply text-xl font-medium font-sora mb-1;
+  }
+  .card-description {
+    @apply text-gray-light;
+  }
+  .highlight {
+    @apply flex items-center gap-2 text-gray-light mb-1;
+  }
+}

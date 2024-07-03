@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Pricing() {
   useGSAP(() => {
-    gsap.to(".pricing-heading", {
+    gsap.to("#pricing-heading", {
       opacity: 1,
       y: 0,
       scrollTrigger: {
@@ -29,14 +29,14 @@ export default function Pricing() {
   }, []);
   return (
     <Container className="max-w-[1440px] m-auto" id="pricing">
-      <h2 className="font-sora text-3xl font-semibold text-center pricing-heading opacity-0 translate-y-[15px] relative z-50">
+      <h2 className="heading" id="pricing-heading">
         Our Pricing Plans
       </h2>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 mt-10 gap-6 relative">
         {pricing.map((plan, i) => (
           <article
             key={i}
-            className={`bg-gray-darker border border-[#555555] p-6 rounded-lg relative ${plan?.additionalClassNames} z-20 pricing-plan opacity-0 -translate-x-10`}
+            className={`card p-6 relative ${plan?.additionalClassNames} z-20 pricing-plan opacity-0 -translate-x-10`}
           >
             <p className="text-blue-primary text-center text-lg">
               [{plan.name}]
@@ -47,19 +47,16 @@ export default function Pricing() {
                 : "Contact us"}
             </h2>
             <ul className="pb-6">
-              {plan.bulletPoints.map((bulletPoint, j) => (
-                <li
-                  key={j}
-                  className="flex items-center gap-2 text-gray-light mb-1"
-                >
+              {plan.highlights.map((highlight, j) => (
+                <li key={j} className="highlight">
                   <span>
                     <FaCircleCheck className="text-blue-primary" />
                   </span>
-                  {bulletPoint}
+                  {highlight}
                 </li>
               ))}
             </ul>
-            <Button className="text-gray-light hover:text-white transition-colors font-semibold absolute bottom-6 right-6 text-sm">
+            <Button className="interactive-element font-semibold absolute bottom-6 right-6 text-sm">
               LEARN MORE
             </Button>
           </article>

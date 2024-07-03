@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Features() {
   useGSAP(() => {
-    gsap.to(".features-heading", {
+    gsap.to("#features-heading", {
       opacity: 1,
       y: 0,
       scrollTrigger: {
@@ -30,30 +30,27 @@ export default function Features() {
       className="max-w-[1440px] m-auto relative !md:pb-20"
       id="features"
     >
-      <h2 className="text-3xl font-semibold text-center font-sora features-heading relative z-50 opacity-0 translate-y-[15px]">
+      <h2 className="heading" id="features-heading">
         Why Choose Our AI Coding Assistant
       </h2>
       <section className="grid md:grid-cols-2 items-center gap-8 mt-10">
         {features.map((feature, i) => (
           <article
             key={i}
-            className={`md:even:translate-y-10 bg-gray-darker border border-[#555555] p-6 rounded-lg ${feature?.className} feature h-full opacity-0 relative`}
+            className={`md:even:translate-y-10 card p-6 ${feature.className} feature h-full opacity-0 relative`}
           >
-            <h3 className="text-xl font-medium font-sora">{feature.heading}</h3>
+            <h3 className="card-heading">{feature.heading}</h3>
             <ul className="pb-6">
-              {feature.bulletPoints.map((bulletPoint, j) => (
-                <li
-                  key={j}
-                  className="flex items-center gap-2 text-gray-light mb-1"
-                >
+              {feature.highlights.map((highlight, j) => (
+                <li key={j} className="highlight">
                   <span>
                     <FaCircleCheck className="text-blue-primary" />
                   </span>
-                  {bulletPoint}
+                  {highlight}
                 </li>
               ))}
             </ul>
-            <feature.icon className="absolute bottom-6 right-6 text-xl text-gray-light hover:text-white transition-colors cursor-pointer" />
+            <feature.icon className="absolute bottom-6 right-6 text-xl interactive-element" />
           </article>
         ))}
       </section>
