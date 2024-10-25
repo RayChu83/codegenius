@@ -30,7 +30,11 @@ export default function Hero() {
       })
       .to(".cta", { opacity: 1 });
     rightHeroTl
-      .fromTo(".code-editor", { y: 200, opacity: 0 }, { y: 0, opacity: 1 })
+      .fromTo(
+        ".code-editor",
+        { y: 200, opacity: 0 },
+        { y: 0, opacity: 1, display: "block" }
+      )
       .fromTo(
         ".top-nav-option",
         { opacity: 0, x: -15 },
@@ -49,7 +53,13 @@ export default function Hero() {
       .fromTo(
         ".ai-dashboard",
         { right: 100, opacity: 0 },
-        { right: 0, opacity: 1, duration: 0.4, ease: "power2.inOut" }
+        {
+          right: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.inOut",
+          display: "block",
+        }
       )
       .to(".ai-dashboard-suggesting", { opacity: 0, delay: 1 })
       .fromTo(".ai-dashboard-response", { opacity: 0 }, { opacity: 100 });
@@ -77,7 +87,7 @@ export default function Hero() {
           </Link>
         </div>
         <div className="flex items-center gap-5 h-full sm:h-96 w-full col-span-6 sm:flex-row flex-col drop-shadow-lightBlue">
-          <section className="card sm:h-full h-[250px] sm:w-[66%] w-full relative code-editor z-[2]">
+          <section className="card sm:h-full h-[250px] sm:w-[66%] w-full relative code-editor z-[2] hidden">
             <nav className="absolute top-2 flex justify-between w-full px-2 z-[2]">
               <ul className="text-[10px] flex items-center gap-2">
                 {codeEditorNavigationElements.map((navElement, index) => (
@@ -126,12 +136,12 @@ export default function Hero() {
             <Image
               src="/html.png"
               alt="html"
-              className="absolute top-8 left-5 pointer-events-none code-editor-html "
+              className="absolute top-8 left-5 pointer-events-none code-editor-html"
               height={114}
               width={200}
             />
           </section>
-          <section className="card sm:h-full h-[250px] sm:w-[34%] w-full relative ai-dashboard">
+          <section className="card sm:h-full h-[250px] sm:w-[34%] w-full relative ai-dashboard hidden">
             <Image
               src="/logo.png"
               alt="logo"
